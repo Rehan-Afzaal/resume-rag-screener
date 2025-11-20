@@ -1,0 +1,54 @@
+FULL-STACK DEVELOPER
+
+Company: InnovateLabs
+Location: Remote
+Type: Full-time
+Salary: $80,000 - $110,000
+
+JOB DESCRIPTION
+
+InnovateLabs is looking for a talented Full-Stack Developer to join our product development team. You will work on building and maintaining our web applications using modern JavaScript frameworks and cloud technologies.
+
+REQUIRED SKILLS
+
+Technical Requirements:
+• 2-4 years of professional web development experience
+• Strong proficiency in React or Vue.js
+• Experience with Node.js and Express
+• Understanding of RESTful API design
+• Proficiency with Git version control
+• Experience with modern CSS frameworks
+• Knowledge of database design (SQL or NoSQL)
+
+Preferred Skills:
+• TypeScript experience
+• Docker knowledge
+• CI/CD pipeline experience
+• Experience with cloud platforms (AWS/GCP)
+• Understanding of Agile methodologies
+
+RESPONSIBILITIES
+
+• Build and maintain web applications
+• Develop responsive user interfaces
+• Create and integrate APIs
+• Write clean, maintainable code
+• Collaborate with design and product teams
+• Participate in code reviews
+• Debug and troubleshoot issues
+
+REQUIREMENTS
+
+• Bachelor's degree in Computer Science or related field (or equivalent experience)
+• Strong problem-solving skills
+• Good communication abilities
+• Self-motivated and eager to learn
+• Portfolio of previous work
+
+WHAT WE OFFER
+
+• Competitive salary
+• Health insurance
+• Remote work flexibility
+• Learning and development opportunities
+• Collaborative team environment

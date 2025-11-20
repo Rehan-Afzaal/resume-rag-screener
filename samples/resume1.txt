@@ -1,0 +1,60 @@
+JOHN DOE
+Senior Backend Developer
+Email: john.doe@email.com | Phone: (555) 123-4567
+Location: Buffalo, NY
+
+SUMMARY
+Highly skilled Senior Backend Developer with 5+ years of experience in designing and implementing scalable web applications. Expertise in Node.js, React, and backend architecture. Proven track record of delivering high-quality solutions in fast-paced environments.
+
+TECHNICAL SKILLS
+Languages: JavaScript, TypeScript, Python, SQL
+Backend: Node.js, Express.js, RESTful APIs, GraphQL, Microservices
+Frontend: React.js (3 years), Redux, HTML5, CSS3
+Databases: PostgreSQL, MongoDB, MySQL, Redis
+Cloud & DevOps: AWS (EC2, S3, Lambda, RDS), Docker, CI/CD, Git
+Tools: Jest, Mocha, Webpack, npm, Postman
+
+PROFESSIONAL EXPERIENCE
+
+Senior Backend Developer
+Tech Solutions Inc., New York, NY
+June 2020 - Present
+• Designed and implemented microservices architecture serving 2M+ daily active users
+• Led backend team of 4 developers in building RESTful APIs using Node.js and Express
+• Optimized database queries reducing response time by 40%
+• Implemented CI/CD pipelines using Jenkins and Docker
+• Collaborated with frontend team to deliver seamless user experiences
+• Technologies: Node.js, PostgreSQL, AWS, Docker, React
+
+Backend Developer
+Digital Innovations LLC, Buffalo, NY
+January 2018 - May 2020
+• Developed and maintained backend services for e-commerce platform
+• Built RESTful APIs handling 100K+ requests per day
+• Implemented authentication and authorization using JWT
+• Worked with MongoDB and PostgreSQL databases
+• Participated in code reviews and mentored junior developers
+• Technologies: Node.js, Express, MongoDB, AWS
+
+EDUCATION
+
+Bachelor of Science in Computer Science
+SUNY Buffalo (State University of New York at Buffalo)
+Graduated: May 2017
+GPA: 3.7/4.0
+
+CERTIFICATIONS
+• AWS Certified Solutions Architect - Associate (2021)
+• Node.js Certified Developer (2019)
+
+NOTABLE PROJECTS
+• Built real-time chat application using WebSockets serving 50K concurrent users
+• Developed payment processing system integrating with Stripe and PayPal
+• Created automated testing framework reducing bug count by 60%
+
+ADDITIONAL INFORMATION
+• Strong understanding of system design and software architecture principles
+• Experience with Agile/Scrum methodologies
+• Excellent problem-solving and communication skills
+• Available for relocation
+• Authorized to work in the US

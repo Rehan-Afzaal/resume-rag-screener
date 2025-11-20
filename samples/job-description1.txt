@@ -1,0 +1,87 @@
+SENIOR BACKEND ENGINEER
+
+Company: TechCorp Solutions
+Location: New York, NY (Remote Available)
+Type: Full-time
+Salary: $120,000 - $160,000
+
+ABOUT THE ROLE
+
+We are seeking an experienced Senior Backend Engineer to join our growing engineering team. You will be responsible for designing, building, and maintaining scalable backend systems that power our platform serving millions of users worldwide.
+
+REQUIRED QUALIFICATIONS
+
+Education:
+• Bachelor's degree in Computer Science, Software Engineering, or related field from an accredited university
+• Master's degree preferred
+
+Experience:
+• 5+ years of professional software development experience
+• 3+ years of experience with Node.js and TypeScript
+• Strong experience building RESTful APIs and microservices
+• Proven track record of building scalable backend systems
+
+Technical Skills:
+• Expert-level proficiency in Node.js and TypeScript
+• Strong experience with PostgreSQL or other relational databases
+• Experience with cloud platforms (AWS, GCP, or Azure)
+• Proficiency with containerization technologies (Docker, Kubernetes)
+• Experience with message queues (RabbitMQ, Kafka, or SQS)
+• Strong understanding of system design and architecture patterns
+• Experience with CI/CD pipelines and DevOps practices
+
+Soft Skills:
+• Excellent problem-solving and analytical skills
+• Strong communication and collaboration abilities
+• Experience leading and mentoring junior developers
+• Ability to work in fast-paced, agile environment
+
+PREFERRED QUALIFICATIONS
+
+• Experience with GraphQL
+• Knowledge of Redis and caching strategies
+• Experience with Elasticsearch or similar search technologies
+• Contributions to open-source projects
+• Experience with serverless architectures
+• Knowledge of security best practices
+• Experience with performance optimization and monitoring tools
+
+RESPONSIBILITIES
+
+• Design and implement robust, scalable backend services and APIs
+• Lead architectural decisions and technical design reviews
+• Optimize application performance and database queries
+• Collaborate with frontend engineers, product managers, and designers
+• Mentor junior engineers and conduct code reviews
+• Participate in on-call rotation for production support
+• Write clean, maintainable, and well-documented code
+• Ensure high code quality through testing and best practices
+• Stay current with emerging technologies and industry trends
+
+WHAT WE OFFER
+
+• Competitive salary and equity compensation
+• Comprehensive health, dental, and vision insurance
+• 401(k) with company match
+• Flexible PTO policy
+• Remote work options
+• Professional development budget
+• Latest tech equipment
+• Collaborative and inclusive work environment
+
+ABOUT OUR TECH STACK
+
+• Backend: Node.js, TypeScript, Express.js, NestJS
+• Databases: PostgreSQL, MongoDB, Redis
+• Cloud: AWS (EC2, RDS, S3, Lambda, ECS)
+• Containers: Docker, Kubernetes, EKS
+• Message Queue: AWS SQS, RabbitMQ
+• Monitoring: DataDog, CloudWatch
+• CI/CD: GitHub Actions, Jenkins
+• Version Control: Git, GitHub
+
+TO APPLY
+
+Please submit your resume and a brief cover letter explaining why you're interested in this position and what makes you a great fit for our team.
+
+We are an equal opportunity employer and value diversity at our company. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status.

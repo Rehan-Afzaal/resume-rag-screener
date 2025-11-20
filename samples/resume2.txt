@@ -1,0 +1,49 @@
+SARAH CHEN
+Full-Stack Developer
+Email: sarah.chen@email.com | Phone: (555) 987-6543
+LinkedIn: linkedin.com/in/sarahchen
+
+PROFESSIONAL SUMMARY
+Versatile Full-Stack Developer with 3 years of experience building modern web applications. Skilled in both frontend and backend development with a passion for creating intuitive user experiences. Strong problem solver with excellent collaboration skills.
+
+TECHNICAL SKILLS
+Frontend: React, Vue.js, JavaScript, TypeScript, HTML5, CSS3, Sass
+Backend: Node.js, Python, Flask, Express.js
+Databases: MongoDB, MySQL, Firebase
+Tools & Technologies: Git, Docker, Webpack, npm, REST APIs
+Cloud: Basic AWS experience (S3, EC2)
+
+WORK EXPERIENCE
+
+Full-Stack Developer
+StartupXYZ, San Francisco, CA
+March 2021 - Present
+• Developed full-stack web applications using React and Node.js
+• Built responsive user interfaces improving user engagement by 35%
+• Implemented RESTful APIs and integrated third-party services
+• Collaborated with designers to create pixel-perfect implementations
+• Participated in daily standups and sprint planning
+
+Junior Developer
+WebDev Agency, Remote
+June 2019 - February 2021
+• Created responsive websites for small business clients
+• Worked with HTML, CSS, JavaScript, and WordPress
+• Maintained and updated existing client websites
+• Learned Node.js and React through self-study and projects
+
+EDUCATION
+
+Bachelor of Arts in Information Systems
+San Francisco State University
+Graduated: May 2019
+
+PROJECTS
+• Personal Portfolio: Built with React and hosted on Netlify
+• Task Manager App: Full-stack MERN application with user authentication
+• Weather Dashboard: React app consuming OpenWeather API
+
+ADDITIONAL INFORMATION
+• Quick learner with strong desire to grow technical skills
+• Active participant in local developer meetups
+• Enjoy contributing to open source projects
