@@ -19,7 +19,7 @@ graph TB
         Upload[Upload Routes]
         Analyze[Analysis Routes]
         ChatAPI[Chat Routes]
-        
+    
         PDFParser[PDF Parser Service]
         Chunker[Document Chunker]
         Embedder[Embedding Service]
@@ -61,23 +61,28 @@ graph TB
 ### Frontend Components
 
 #### 1. FileUpload Component
+
 **Purpose**: Handle resume and job description file uploads
 
 **Features**:
+
 - Drag-and-drop support
 - File type validation (PDF, TXT)
 - Upload progress feedback
 - State management for uploaded files
 
 **State Flow**:
+
 ```
 User selects file → Validate file type → Upload to backend → Update session state
 ```
 
 #### 2. MatchAnalysis Component
+
 **Purpose**: Display resume match results
 
 **Features**:
+
 - Circular progress indicator for match score
 - Strengths list with visual indicators
 - Gaps list highlighting missing qualifications
@@ -85,6 +90,7 @@ User selects file → Validate file type → Upload to backend → Update sessio
 - Resume highlights (skills, experience, education)
 
 **Data Structure**:
+
 ```typescript
 {
   matchScore: number,
@@ -100,9 +106,11 @@ User selects file → Validate file type → Upload to backend → Update sessio
 ```
 
 #### 3. ChatInterface Component
+
 **Purpose**: RAG-powered Q&A interface
 
 **Features**:
+
 - Message thread display
 - Typing indicators
 - Suggested questions
@@ -110,6 +118,7 @@ User selects file → Validate file type → Upload to backend → Update sessio
 - Input validation
 
 **Message Flow**:
+
 ```mermaid
 sequenceDiagram
     participant User
@@ -134,42 +143,51 @@ sequenceDiagram
 ### Backend Services
 
 #### 1. PDF Parser Service
+
 **File**: `src/services/pdfParser.ts`
 
 **Responsibilities**:
+
 - Extract text from PDF files using pdf-parse
 - Handle TXT file reading
 - Clean and normalize extracted text
 
 **Methods**:
+
 - `parsePDF(filePath)` → Extract text from PDF
 - `parseTXT(filePath)` → Read text file
 - `parseFile(filePath)` → Auto-detect and parse
 - `cleanText(text)` → Normalize text
 
 #### 2. Document Chunker Service
+
 **File**: `src/services/documentChunker.ts`
 
 **Responsibilities**:
+
 - Split documents into logical sections
 - Identify resume sections (Skills, Experience, Education)
 - Identify JD sections (Requirements, Responsibilities)
 
 **Chunking Strategy**:
+
 ```
 Resume → [Skills Section, Experience Section, Education Section, Summary Section]
 JD → [Requirements Section, Responsibilities Section, Qualifications Section]
 ```
 
 **Section Detection**:
+
 - Uses pattern matching on section headers
 - Fall-through to "other" section for unmatched content
 - Preserves section metadata for retrieval
 
 #### 3. Embedding Service
+
 **File**: `src/services/embeddingService.ts`
 
 **Responsibilities**:
+
 - Generate vector embeddings using OpenAI
 - Batch processing for efficiency
 - Rate limiting handling
@@ -177,20 +195,24 @@ JD → [Requirements Section, Responsibilities Section, Qualifications Section]
 **Model**: `text-embedding-3-small` (1536 dimensions)
 
 **Batch Processing**:
+
 - Process up to 20 texts per batch
 - Prevents rate limiting
 - Optimizes API usage
 
 #### 4. Vector Store Service
+
 **File**: `src/services/vectorStore.ts`
 
 **Responsibilities**:
+
 - Manage ChromaDB collections (one per session)
 - Store embeddings with metadata
 - Perform similarity searches
 - Collection lifecycle management
 
 **Data Model**:
+
 ```typescript
 {
   id: string,              // Unique chunk ID
@@ -205,14 +227,17 @@ JD → [Requirements Section, Responsibilities Section, Qualifications Section]
 ```
 
 #### 5. RAG Service
+
 **File**: `src/services/ragService.ts`
 
 **Responsibilities**:
+
 - Core RAG pipeline implementation
 - Document indexing (chunking → embedding → storage)
 - Question answering (embedding → retrieval → generation)
 
 **RAG Pipeline**:
+
 ```
 1. Document Indexing:
    Document → Chunks → Embeddings → Vector DB
@@ -223,6 +248,7 @@ JD → [Requirements Section, Responsibilities Section, Qualifications Section]
 ```
 
 **Context Building**:
+
 ```typescript
 const context = relevantChunks
   .map(chunk => `[${chunk.metadata.section}]\n${chunk.content}`)
@@ -230,6 +256,7 @@ const context = relevantChunks
 ```
 
 **LLM Prompt Template**:
+
 ```
 System: You are an AI assistant helping recruiters evaluate candidates.
 Answer based ONLY on the provided context from the resume.
@@ -240,15 +267,18 @@ Question: {user_question}
 ```
 
 #### 6. Resume Analyzer Service
+
 **File**: `src/services/resumeAnalyzer.ts`
 
 **Responsibilities**:
+
 - Extract structured data from resumes
 - Parse job description requirements
 - Calculate match scores
 - Identify strengths and gaps
 
 **Match Score Algorithm**:
+
 ```
 Total Score = (Skills Match × 0.4) 
             + (Experience Match × 0.3)
@@ -394,11 +424,13 @@ Return answer with source citations
 ## Scalability Considerations
 
 **Current Design** (Demo/Development):
+
 - In-memory session storage
 - In-memory vector database (ChromaDB)
 - Single server instance
 
 **Production Recommendations**:
+
 - Use PostgreSQL/MongoDB for session persistence
 - Use Pinecone/Qdrant for production vector storage
 - Implement Redis for caching
@@ -409,25 +441,27 @@ Return answer with source citations
 
 ## Technology Choices
 
-| Component | Technology | Reasoning |
-|-----------|-----------|-----------|
-| Backend | Node.js + TypeScript | Type safety, async I/O, npm ecosystem |
-| Frontend | React + TypeScript | Component reusability, type safety, large community |
-| Vector DB | ChromaDB | Easy local setup, good for demo, Python/JS support |
-| Embeddings | OpenAI text-embedding-3-small | Cost-effective, high quality, fast |
-| LLM | GPT-3.5-turbo | Good balance of cost, speed, and quality |
-| Build Tool | Vite | Fast HMR, modern build tooling |
-| HTTP Client | Axios | Promise-based, interceptors, TypeScript support |
+| Component   | Technology                    | Reasoning                                           |
+| ----------- | ----------------------------- | --------------------------------------------------- |
+| Backend     | Node.js + TypeScript          | Type safety, async I/O, npm ecosystem               |
+| Frontend    | React + TypeScript            | Component reusability, type safety, large community |
+| Vector DB   | ChromaDB                      | Easy local setup, good for demo, Python/JS support  |
+| Embeddings  | OpenAI text-embedding-3-small | Cost-effective, high quality, fast                  |
+| LLM         | GPT-4o-mini                   | Better quality, cost-effective, fast                |
+| Build Tool  | Vite                          | Fast HMR, modern build tooling                      |
+| HTTP Client | Axios                         | Promise-based, interceptors, TypeScript support     |
 
 ## Error Handling
 
 ### Backend
+
 - Try-catch blocks in all async operations
 - Dedicated error handling middleware
 - Typed error responses
 - Logging to console (would use proper logging service in production)
 
 ### Frontend
+
 - API error catching and user-friendly messages
 - Loading states prevent multiple submissions
 - Form validation before API calls

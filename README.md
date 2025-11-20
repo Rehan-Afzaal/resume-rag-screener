@@ -37,7 +37,7 @@ An AI-powered resume screening application that uses Retrieval-Augmented Generat
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Rehan-Afzaal/resume-rag-screener.git
 cd task
 ```
 
