@@ -46,7 +46,7 @@ export class RAGService {
     }
 
     /**
-     * Answer a question using RAG pipeline
+     * Answer a question using RAG pipeline with strong anti-hallucination measures
      */
     async answerQuestion(
         sessionId: string,
@@ -69,39 +69,54 @@ export class RAGService {
                 .map(chunk => `[${chunk.metadata.section}]\n${chunk.content}`)
                 .join('\n\n---\n\n');
 
-            // Prepare messages for LLM
+            // Prepare messages for LLM with STRONG anti-hallucination prompt
             const messages: OpenAI.Chat.ChatCompletionMessageParam[] = [
                 {
                     role: 'system',
-                    content: `You are an AI assistant helping recruiters evaluate candidates. 
-You have access to the candidate's resume through the provided context.
-Answer questions accurately based ONLY on the information in the context.
-If the information is not in the context, say "I don't have that information in the resume."
-Be concise and specific, citing relevant details from the resume.`
+                    content: `You are a resume screening assistant. You MUST follow these rules strictly:
+
+CRITICAL RULES:
+1. ONLY use information that is EXPLICITLY stated in the "Context from resume" provided below
+2. If information is NOT in the context, you MUST say: "I don't have that information in the resume"
+3. DO NOT make assumptions or infer information not explicitly stated
+4. DO NOT use your general knowledge about skills or technologies
+5. If asked about a skill/experience NOT mentioned in the context, clearly state it's NOT in the resume
+6. Be factual and cite specific sections from the resume when answering
+
+VERIFICATION PROCESS:
+Before answering, verify:
+- Is this information explicitly stated in the context?
+- Can I quote the exact text from the resume?
+- If NO to either: respond with "I don't have that information in the resume" or "This is not mentioned in the resume"
+
+Answer concisely and accurately based ONLY on the provided context.`
                 }
             ];
 
-            // Add chat history (last 4 messages for context)
-            const recentHistory = chatHistory.slice(-4);
-            for (const msg of recentHistory) {
-                messages.push({
-                    role: msg.role,
-                    content: msg.content
-                });
-            }
+            // Do NOT include chat history to avoid context confusion
+            // Each question should be answered fresh from the resume context only
 
-            // Add current question with context
+            // Add current question with context - make it very clear what the context is
             messages.push({
                 role: 'user',
-                content: `Context from resume:\n${context}\n\nQuestion: ${question}`
+                content: `Context from resume:
+---
+${context}
+---
+
+Question: ${question}
+
+IMPORTANT: Answer ONLY using information explicitly stated in the context above. If the information is not in the context, say "I don't have that information in the resume."`
             });
 
             // Get response from LLM using Chat Completions API
             const completion = await this.openai.chat.completions.create({
                 model: 'gpt-4o-mini',
                 messages,
-                temperature: 0.3,
-                max_tokens: 500
+                temperature: 0.0,  // Set to 0 for maximum factual accuracy, no creativity
+                max_tokens: 500,
+                presence_penalty: 0.0,  // No penalty for repetition
+                frequency_penalty: 0.0  // Focus on accuracy over variety
             });
 
             const answer = completion.choices[0].message.content || 'No response generated.';
